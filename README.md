@@ -15,7 +15,7 @@
 |  **Windows 10/11**   | [`Windows Subsystem for Linux (WSL)`]() |
 | **MacOS and others** |         [`Oracle VirtualBox`]()         |
 
-ใน Repository นี้ ผู้เขียนจะใช้งาน Orcale VirtualBox ในการเขียน Guide ในการทำ Activity ในแต่ละสัปดาห์ เพราะว่า Terminal ใน Ubuntu มันเท่กว่า Windows
+ใน Repository นี้ ผู้เขียนจะใช้งาน Orcale VirtualBox ในการเขียน Guide ของ Activity เพราะว่า Terminal มันเท่และสวยกว่าเฉยๆ
 
 ---
 
