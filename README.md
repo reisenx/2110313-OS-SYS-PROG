@@ -13,7 +13,7 @@
 |   Operating System   |                                                                   Installation Guide                                                                   |
 | :------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
 |  **Windows 10/11**   | [`Windows Subsystem for Linux (WSL)`](https://github.com/reisenx/2110313-OS-SYS-PROG/blob/main/Activity%2001/SETUP.md#windows-subsystem-for-linux-wsl) |
-| **MacOS and others** |         [`Oracle VirtualBox`](https://github.com/reisenx/2110313-OS-SYS-PROG/blob/main/Activity%2001/SETUP.md#windows-subsystem-for-linux-wsl)         |
+| **MacOS and others** |                [`Oracle VirtualBox`](https://github.com/reisenx/2110313-OS-SYS-PROG/blob/main/Activity%2001/SETUP.md#oracle-virtualbox)                |
 
 ใน Repository นี้ ผู้เขียนจะใช้งาน Orcale VirtualBox ในการเขียน Guide ของ Activity เพราะว่า Terminal มันเท่และสวยกว่าเฉยๆ
 
