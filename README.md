@@ -10,10 +10,10 @@
 
 ในการติดตั้ง VirtualBox จะยุ่งยากกว่า WSL พอสมควร ผู้อ่านสามารถไปอ่านวิธีการติดตั้งโดยคลิกไปที่ Installation Guide บนตาราง
 
-|   Operating System   |           Installation Guide            |
-| :------------------: | :-------------------------------------: |
-|  **Windows 10/11**   | [`Windows Subsystem for Linux (WSL)`]() |
-| **MacOS and others** |         [`Oracle VirtualBox`]()         |
+|   Operating System   |                                                                                   Installation Guide                                                                                    |
+| :------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|  **Windows 10/11**   | [`Windows Subsystem for Linux (WSL)`](<img src="https://raw.githubusercontent.com/reisenx/2110313-OS-SYS-PROG/refs/heads/main/Activity%2001/guide_pics/02.png" width=100% height=100%>) |
+| **MacOS and others** |         [`Oracle VirtualBox`](<img src="https://raw.githubusercontent.com/reisenx/2110313-OS-SYS-PROG/refs/heads/main/Activity%2001/guide_pics/02.png" width=100% height=100%>)         |
 
 ใน Repository นี้ ผู้เขียนจะใช้งาน Orcale VirtualBox ในการเขียน Guide ของ Activity เพราะว่า Terminal มันเท่และสวยกว่าเฉยๆ
 
