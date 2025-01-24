@@ -17,6 +17,8 @@
 
 ใน Repository นี้ ผู้เขียนจะใช้งาน Orcale VirtualBox ในการเขียน Guide ในการทำ Activity ในแต่ละสัปดาห์ เพราะว่า Terminal ใน Ubuntu มันเท่กว่า Windows
 
+---
+
 ## Group Member
 
 ในวิชานี้จะมี Activity เป็นรายสัปดาห์ คล้ายๆกับวิชา `2110211 COM ENG ESS` โดยกลุ่มของผู้เขียนมีทั้งหมด 3 คน ดังนี้
@@ -25,19 +27,21 @@
 - Naytipat Phothipan
 - Sippapas Chavanont
 
+---
+
 ## OS Activity
 
-|  No.   |          Activity           |   Guide   |
-| :----: | :-------------------------: | :-------: |
-| **01** |   **Linux Installation**    | [Guide]() |
-| **02** |     **Linux Commands**      | [Guide]() |
-| **03** |     **Process Concept**     | [Guide]() |
-| **04** |      **Simple Shell**       | [Guide]() |
-| **05** |   **Pthread Programming**   | [Guide]() |
-| **06** |   **Process Scheduling**    | [Guide]() |
+|  No.   | Activity                    |   Guide   |
+| :----: | :-------------------------- | :-------: |
+| **01** | **Linux Installation**      | [Guide]() |
+| **02** | **Linux Commands**          | [Guide]() |
+| **03** | **Process Concept**         | [Guide]() |
+| **04** | **Simple Shell**            | [Guide]() |
+| **05** | **Pthread Programming**     | [Guide]() |
+| **06** | **Process Scheduling**      | [Guide]() |
 | **07** | **Process Synchronization** | [Guide]() |
-| **08** |    **Memory Management**    | [Guide]() |
-| **09** |       **File System**       | [Guide]() |
-| **10** |      **Kernel Module**      | [Guide]() |
-| **11** |        **Container**        | [Guide]() |
-| **12** |       **Protection**        | [Guide]() |
+| **08** | **Memory Management**       | [Guide]() |
+| **09** | **File System**             | [Guide]() |
+| **10** | **Kernel Module**           | [Guide]() |
+| **11** | **Container**               | [Guide]() |
+| **12** | **Protection**              | [Guide]() |
