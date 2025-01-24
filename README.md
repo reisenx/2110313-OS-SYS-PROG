@@ -8,12 +8,12 @@
 
 สำหรับการติดตั้ง Linux บนเครื่องคอมพิวเตอร์นั้น ขึ้นอยู่กับว่าเราใช้ระบบปฏิบัติการอะไร ถ้าหากใช้ Windows 10/11 จะใช้ WSL แต่ถ้าเป็น MacOS หรือ Windows รุ่นอื่นๆ จะใช้ VirtualBox แทน
 
-ในการติดตั้ง VirtualBox จะยุ่งยากกว่า WSL พอสมควร ผู้อ่านสามารถไปอ่านวิธีการติดตั้งโดยคลิกไปที่ Install Guide บนตาราง
+ในการติดตั้ง VirtualBox จะยุ่งยากกว่า WSL พอสมควร ผู้อ่านสามารถไปอ่านวิธีการติดตั้งโดยคลิกไปที่ Installation Guide บนตาราง
 
-|   Operating System   |             Install Guide             |
-| :------------------: | :-----------------------------------: |
-|  **Windows 10/11**   | [Windows Subsystem for Linux (WSL)]() |
-| **MacOS and others** |         [Oracle VirtualBox]()         |
+|   Operating System   |           Installation Guide            |
+| :------------------: | :-------------------------------------: |
+|  **Windows 10/11**   | [`Windows Subsystem for Linux (WSL)`]() |
+| **MacOS and others** |         [`Oracle VirtualBox`]()         |
 
 ใน Repository นี้ ผู้เขียนจะใช้งาน Orcale VirtualBox ในการเขียน Guide ในการทำ Activity ในแต่ละสัปดาห์ เพราะว่า Terminal ใน Ubuntu มันเท่กว่า Windows
 
