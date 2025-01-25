@@ -47,6 +47,6 @@
 - นายเนติภัทร โพธิพันธ์
 - นายสิปปภาส ชวานนท์
 
-### This is our group name in the course's MyCourseVille. (Who let bro cook :sob::sob::sob:)
+### This is our group name in myCourseVille. (Who let bro cook :sob::sob::sob:)
 
 <img src="https://raw.githubusercontent.com/reisenx/2110313-OS-SYS-PROG/refs/heads/main/Others/group.png" width=60% height=60%>
