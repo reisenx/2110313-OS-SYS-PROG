@@ -19,29 +19,31 @@
 
 ---
 
+## OS Activity
+
+|  No.   | Activity                    | Activity Guide  |
+| :----: | :-------------------------- | :-------------: |
+| **01** | **Linux Installation**      | [Act01 Guide]() |
+| **02** | **Linux Commands**          | [Act02 Guide]() |
+| **03** | **Process Concept**         | [Act03 Guide]() |
+| **04** | **Simple Shell**            | [Act04 Guide]() |
+| **05** | **Pthread Programming**     | [Act05 Guide]() |
+| **06** | **Process Scheduling**      | [Act06 Guide]() |
+| **07** | **Process Synchronization** | [Act07 Guide]() |
+| **08** | **Memory Management**       | [Act08 Guide]() |
+| **09** | **File System**             | [Act09 Guide]() |
+| **10** | **Kernel Module**           | [Act10 Guide]() |
+| **11** | **Container**               | [Act11 Guide]() |
+| **12** | **Protection**              | [Act12 Guide]() |
+
+---
+
 ## Group Member
 
 ในวิชานี้จะมี Activity เป็นรายสัปดาห์ คล้ายๆกับวิชา `2110211 COM ENG ESS` โดยกลุ่มของผู้เขียนมีทั้งหมด 3 คน ดังนี้
 
-- Worralop Srichainont ([@reisenx](https://github.com/reisenx))
-- Naytipat Phothipan
-- Sippapas Chavanont
+- นายวรลภย์ ศรีชัยนนท์ ([@reisenx](https://github.com/reisenx))
+- นายเนติภัทร โพธิพันธ์
+- นายสิปปภาส ชวานนท์
 
----
-
-## OS Activity
-
-|  No.   | Activity                    |   Guide   |
-| :----: | :-------------------------- | :-------: |
-| **01** | **Linux Installation**      | [Guide]() |
-| **02** | **Linux Commands**          | [Guide]() |
-| **03** | **Process Concept**         | [Guide]() |
-| **04** | **Simple Shell**            | [Guide]() |
-| **05** | **Pthread Programming**     | [Guide]() |
-| **06** | **Process Scheduling**      | [Guide]() |
-| **07** | **Process Synchronization** | [Guide]() |
-| **08** | **Memory Management**       | [Guide]() |
-| **09** | **File System**             | [Guide]() |
-| **10** | **Kernel Module**           | [Guide]() |
-| **11** | **Container**               | [Guide]() |
-| **12** | **Protection**              | [Guide]() |
+<img src="https://raw.githubusercontent.com/reisenx/2110313-OS-SYS-PROG/refs/heads/main/Others/group.png" width=60% height=60%>
