@@ -15,7 +15,8 @@
 |  **Windows 10/11**   | [`Windows Subsystem for Linux (WSL)`](https://github.com/reisenx/2110313-OS-SYS-PROG/blob/main/Activity%2001/SETUP.md#windows-subsystem-for-linux-wsl) |
 | **MacOS and others** |                [`Oracle VirtualBox`](https://github.com/reisenx/2110313-OS-SYS-PROG/blob/main/Activity%2001/SETUP.md#oracle-virtualbox)                |
 
-ใน Repository นี้ ผู้เขียนจะใช้งาน Orcale VirtualBox ในการเขียน Guide ของ Activity เพราะว่า Terminal มันเท่และสวยกว่าเฉยๆ
+> [!NOTE]
+> ใน Repository นี้ ผู้เขียนจะใช้งาน `Orcale VirtualBox` ในการเขียน Guide ของ Activity ต่างๆเพราะว่า Terminal มันเท่และสวยกว่า `WSL` เฉยๆ
 
 ---
 
@@ -45,5 +46,7 @@
 - นายวรลภย์ ศรีชัยนนท์ ([@reisenx](https://github.com/reisenx))
 - นายเนติภัทร โพธิพันธ์
 - นายสิปปภาส ชวานนท์
+
+### This is our group name in the course's MyCourseVille. (Who let bro cook :sob::sob::sob:)
 
 <img src="https://raw.githubusercontent.com/reisenx/2110313-OS-SYS-PROG/refs/heads/main/Others/group.png" width=60% height=60%>
