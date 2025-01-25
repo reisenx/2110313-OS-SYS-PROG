@@ -10,8 +10,6 @@ int main() {
 
 		pid2 = fork();
 		if(pid2 == 0) {
-			childpid = getppid();
-			grandchildpid = getpid();
 			printf("I am the grandchild process. My PID is %d ", getpid());
 			printf("and my parent's PID is %d\n", getppid());
 		}
