@@ -22,20 +22,20 @@
 
 ## OS Activity
 
-|  No.   | Activity                    | Activity Guide  |
-| :----: | :-------------------------- | :-------------: |
-| **01** | **Linux Installation**      | [Act01 Guide]() |
-| **02** | **Linux Commands**          | [Act02 Guide]() |
-| **03** | **Process Concept**         | [Act03 Guide]() |
-| **04** | **Simple Shell**            | [Act04 Guide]() |
-| **05** | **Pthread Programming**     | [Act05 Guide]() |
-| **06** | **Process Scheduling**      | [Act06 Guide]() |
-| **07** | **Process Synchronization** | [Act07 Guide]() |
-| **08** | **Memory Management**       | [Act08 Guide]() |
-| **09** | **File System**             | [Act09 Guide]() |
-| **10** | **Kernel Module**           | [Act10 Guide]() |
-| **11** | **Container**               | [Act11 Guide]() |
-| **12** | **Protection**              | [Act12 Guide]() |
+|  No.   | Activity                    |      Submission      | Activity Guide  |
+| :----: | :-------------------------- | :------------------: | :-------------: |
+| **01** | **Linux Installation**      | [Act01 Submission]() | [Act01 Guide]() |
+| **02** | **Linux Commands**          | [Act02 Submission]() | [Act02 Guide]() |
+| **03** | **Process Concept**         | [Act03 Submission]() | [Act03 Guide]() |
+| **04** | **Simple Shell**            | [Act04 Submission]() | [Act04 Guide]() |
+| **05** | **Pthread Programming**     | [Act05 Submission]() | [Act05 Guide]() |
+| **06** | **Process Scheduling**      | [Act06 Submission]() | [Act06 Guide]() |
+| **07** | **Process Synchronization** | [Act07 Submission]() | [Act07 Guide]() |
+| **08** | **Memory Management**       | [Act08 Submission]() | [Act08 Guide]() |
+| **09** | **File System**             | [Act09 Submission]() | [Act09 Guide]() |
+| **10** | **Kernel Module**           | [Act10 Submission]() | [Act10 Guide]() |
+| **11** | **Container**               | [Act11 Submission]() | [Act11 Guide]() |
+| **12** | **Protection**              | [Act12 Submission]() | [Act12 Guide]() |
 
 ---
 
