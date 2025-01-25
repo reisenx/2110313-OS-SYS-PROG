@@ -46,7 +46,7 @@ int main() {
 		printf("mysh >");
 		/*  Variables declaration */
 		char string[256];
-		char **arrayOfTokens;
+		char **arrayOfTokens = NULL;
 		char delimiters[] = "\t\n";
 
 		/*  Input and tokenize to get array of arguments */
@@ -73,6 +73,9 @@ int main() {
 				wait(NULL); // parents waits for its child.
 			}
 		}
+		/* Free the allocated memory each loop */
+		free(arrayOfTokens[0]);
+		free(arrayOfTokens);
 	}
 	return 0;
 }
