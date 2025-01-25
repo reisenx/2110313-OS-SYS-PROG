@@ -35,7 +35,6 @@ int tokenize(char *string, char *delimiters, char ***arrayOfTokens) {
 		}
 		(*arrayOfTokens)[numtokens] = NULL;
 	}
-
 	return numtokens;
 }
 
@@ -47,7 +46,7 @@ int main() {
 		/*  Variables declaration */
 		char string[256];
 		char **arrayOfTokens = NULL;
-		char delimiters[] = "\t\n";
+		char delimiters[] = " \t\n";
 
 		/*  Input and tokenize to get array of arguments */
 		fgets(string, 256, stdin);
@@ -73,7 +72,7 @@ int main() {
 				wait(NULL); // parents waits for its child.
 			}
 		}
-		/* Free the allocated memory each loop */
+		/* Free the allocated memory after execute in each loop */
 		free(arrayOfTokens[0]);
 		free(arrayOfTokens);
 	}
