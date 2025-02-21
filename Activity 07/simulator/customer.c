@@ -16,7 +16,7 @@ int rand_int(int n) {
 int main(int argc, char **argv) {
 	printf("Starting customer\n");
 	// OS -- OPEN NAMED SEMAPHORE HERE
-	sem_t *sem = sen_open(SEM_NAME, O_CREAT, 0644, 0);
+	sem_t *sem = sem_open(SEM_NAME, O_CREAT, 0644, 0);
 	while (1)
 	{
 		// Customer will sleep between 1-3 seconds before placing the next phone call
