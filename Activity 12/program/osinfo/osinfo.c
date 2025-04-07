@@ -22,6 +22,14 @@ static const char f_data0[] =
     "2:\tKrerk Piromsopa, Ph.D.\n"
     "3:\tThongchai Rojkangsadan\n";
 
+/* ----- ADD YOUR GROUP MEMBERS HERE ----- */
+static const char f_data1[] = 
+    "0:CP ENG CU OS 2022S2 - Students, Group Name: LigmaBoy\n"
+    "1:\t6630333721 Sippapas Chavanont\n"
+    "2:\t6631331621 Naytipat Phothipan\n"
+    "3:\t6632200221 Worralop Srichainont\n";
+/* --------------------------------------- */
+
 // prototypes for device functions
 static int device_open(struct inode *, struct file *);
 static int device_release(struct inode *inode, struct file *file);
