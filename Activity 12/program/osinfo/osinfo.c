@@ -75,8 +75,19 @@ static int device_open(struct inode *inode, struct file *file)
         return -EBUSY;
 
     dev_open++;
-    printk(KERN_INFO "dev minor %d\n", MINOR(inode->i_rdev));
-    f_ptr = (char *)f_data0;
+    /* ---------- MODIFY THIS ---------- */
+    int minor = MINOR(inode->i_rdev);
+    printk(KERN_INFO "dev minor %d\n", minor);
+    if(minor == 0) {
+        f_ptr = (char *)f_data0;
+    }
+    else if(minor == 1) {
+        f_ptr = (char *)f_data1;
+    }
+    else {
+        return -ENODEV;
+    }
+    /* --------------------------------- */
 
     // lock module
     try_module_get(THIS_MODULE);
