@@ -1,1 +1,0 @@
-savedcmd_/home/reisenx/Documents/act12/dummy/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/reisenx/Documents/act12/dummy/Module.symvers -T /home/reisenx/Documents/act12/dummy/modules.order -i Module.symvers -e 
