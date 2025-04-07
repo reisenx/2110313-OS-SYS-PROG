@@ -1,0 +1,1 @@
+savedcmd_/home/reisenx/Documents/act12/dummy/dummy.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /home/reisenx/Documents/act12/dummy/dummy.ko /home/reisenx/Documents/act12/dummy/dummy.o /home/reisenx/Documents/act12/dummy/dummy.mod.o
