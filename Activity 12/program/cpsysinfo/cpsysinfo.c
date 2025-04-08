@@ -6,7 +6,6 @@
 #include <linux/device.h>
 #include <linux/sched/signal.h>  // for_each_process
 #include <linux/mm.h>            // for si_meminfo
-#include <linux/vmstat.h>        // for global_page_state
 #include <linux/slab.h>          // for kzalloc
 
 #define DEVICE_NAME "cpsysinfo"
@@ -74,7 +73,7 @@ static int dev_open(struct inode *inodep, struct file *filep) {
 
         unsigned long mem_total = TO_KB(i.totalram);
         unsigned long mem_free = TO_KB(i.freeram);
-        unsigned long mem_available = TO_KB(i.freeram + i.bufferram + global_page_state(NR_FILE_PAGES));
+        unsigned long mem_available = TO_KB(i.freeram + i.bufferram);  // simplified approximation
 
         info_size = snprintf(info_buffer, 8192,
                              "MemTotal: %lu kB\n"
@@ -106,7 +105,7 @@ static int __init cpsysinfo_init(void) {
         return majorNumber;
     }
 
-    cpClass = class_create(CLASS_NAME);  // Fixed for Linux 6.8+
+    cpClass = class_create(CLASS_NAME);  // For Linux 6.8+
     if (IS_ERR(cpClass)) {
         unregister_chrdev(majorNumber, DEVICE_NAME);
         return PTR_ERR(cpClass);
