@@ -5,9 +5,9 @@
 #include <linux/uaccess.h>
 #include <linux/device.h>
 #include <linux/sched/signal.h>  // for_each_process
-#include <linux/mm.h>            // si_meminfo
-#include <linux/slab.h>          // kzalloc
-#include <linux/mmzone.h>        // PAGE_SHIFT
+#include <linux/mm.h>            // for si_meminfo
+#include <linux/vmstat.h>        // for global_page_state
+#include <linux/slab.h>          // for kzalloc
 
 #define DEVICE_NAME "cpsysinfo"
 #define CLASS_NAME "cpclass"
@@ -74,7 +74,7 @@ static int dev_open(struct inode *inodep, struct file *filep) {
 
         unsigned long mem_total = TO_KB(i.totalram);
         unsigned long mem_free = TO_KB(i.freeram);
-        unsigned long mem_available = TO_KB(i.freeram);  // rough approximation
+        unsigned long mem_available = TO_KB(i.freeram + i.bufferram + global_page_state(NR_FILE_PAGES));
 
         info_size = snprintf(info_buffer, 8192,
                              "MemTotal: %lu kB\n"
