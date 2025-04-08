@@ -1,0 +1,26 @@
+make -C /lib/modules/6.8.0-51-generic/build M=/home/reisenx/Documents/act12/cpuinfo modules
+make[1]: Entering directory '/usr/src/linux-headers-6.8.0-51-generic'
+warning: the compiler differs from the one used to build the kernel
+  The kernel was built by: x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+  You are using:           gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+  CC [M]  /home/reisenx/Documents/act12/cpuinfo/cpuinfo.o
+/home/reisenx/Documents/act12/cpuinfo/cpuinfo.c:21:20: error: redefinition of ‘native_cpuid’
+   21 | static inline void native_cpuid(unsigned int *eax, unsigned int *ebx,
+      |                    ^~~~~~~~~~~~
+In file included from ./arch/x86/include/asm/processor.h:19,
+                 from ./arch/x86/include/asm/timex.h:5,
+                 from ./include/linux/timex.h:67,
+                 from ./include/linux/time32.h:13,
+                 from ./include/linux/time.h:60,
+                 from ./include/linux/stat.h:19,
+                 from ./include/linux/module.h:13,
+                 from /home/reisenx/Documents/act12/cpuinfo/cpuinfo.c:1:
+./arch/x86/include/asm/cpuid.h:30:20: note: previous definition of ‘native_cpuid’ with type ‘void(unsigned int *, unsigned int *, unsigned int *, unsigned int *)’
+   30 | static inline void native_cpuid(unsigned int *eax, unsigned int *ebx,
+      |                    ^~~~~~~~~~~~
+make[3]: *** [scripts/Makefile.build:243: /home/reisenx/Documents/act12/cpuinfo/cpuinfo.o] Error 1
+make[2]: *** [/usr/src/linux-headers-6.8.0-51-generic/Makefile:1925: /home/reisenx/Documents/act12/cpuinfo] Error 2
+make[1]: *** [Makefile:240: __sub-make] Error 2
+make[1]: Leaving directory '/usr/src/linux-headers-6.8.0-51-generic'
+make: *** [Makefile:3: all] Error 2
+
