@@ -5,8 +5,8 @@
 #include <linux/uaccess.h>
 #include <linux/device.h>
 #include <linux/sched/signal.h>  // for_each_process
-#include <linux/mm.h>            // totalram_pages
-#include <linux/slab.h>
+#include <linux/mm.h>            // for si_meminfo()
+#include <linux/slab.h>          // for kzalloc
 
 #define DEVICE_NAME "cpsysinfo"
 #define CLASS_NAME "cpclass"
@@ -17,13 +17,13 @@ MODULE_DESCRIPTION("\"cpsysinfo\" Character Device");
 
 static int majorNumber;
 static struct class* cpClass = NULL;
-static struct device* cpDevice = NULL;
+static struct device* cpDevice0 = NULL;
+static struct device* cpDevice1 = NULL;
 
 static char *info_buffer;
 static int info_size;
 static int already_read = 0;
 
-// Read operation
 static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *offset) {
     int bytes_to_copy;
 
@@ -42,39 +42,38 @@ static ssize_t dev_read(struct file *filep, char *buffer, size_t len, loff_t *of
     return bytes_to_copy;
 }
 
-// Open operation
 static int dev_open(struct inode *inodep, struct file *filep) {
     int minor = MINOR(inodep->i_rdev);
     struct task_struct *task;
 
-    if (info_buffer) {
+    if (info_buffer)
         kfree(info_buffer);
-    }
 
-    info_buffer = kzalloc(8192, GFP_KERNEL);  // Allocate 8KB buffer
-    if (!info_buffer) return -ENOMEM;
+    info_buffer = kzalloc(8192, GFP_KERNEL);
+    if (!info_buffer)
+        return -ENOMEM;
 
     info_size = 0;
     already_read = 0;
 
     if (minor == 0) {
-        // List processes
+        // Process info
         for_each_process(task) {
             info_size += snprintf(info_buffer + info_size, 8192 - info_size,
                                   "%d,%s\n", task->pid, task->comm);
-            if (info_size >= 8192 - 100) break;  // prevent overflow
+            if (info_size >= 8192 - 100)
+                break;
         }
     } else if (minor == 1) {
-        // Show memory info
+        // Memory info
         struct sysinfo i;
         si_meminfo(&i);
 
         info_size = snprintf(info_buffer, 8192,
                              "Total RAM: %lu KB\nFree RAM: %lu KB\n",
-                             i.totalram * 4UL,  // assuming PAGE_SIZE is 4096
-                             i.freeram * 4UL);
+                             i.totalram * 4UL, i.freeram * 4UL); // 4KB/page
     } else {
-        snprintf(info_buffer, 8192, "Invalid minor number %d\n", minor);
+        snprintf(info_buffer, 8192, "Invalid minor number: %d\n", minor);
         info_size = strlen(info_buffer);
     }
 
@@ -85,8 +84,7 @@ static int dev_release(struct inode *inodep, struct file *filep) {
     return 0;
 }
 
-static struct file_operations fops =
-{
+static struct file_operations fops = {
     .open = dev_open,
     .read = dev_read,
     .release = dev_release,
@@ -95,31 +93,36 @@ static struct file_operations fops =
 static int __init cpsysinfo_init(void) {
     majorNumber = register_chrdev(0, DEVICE_NAME, &fops);
     if (majorNumber < 0) {
-        printk(KERN_ALERT "Failed to register device\n");
+        printk(KERN_ALERT "Failed to register char device\n");
         return majorNumber;
     }
 
-    cpClass = class_create(THIS_MODULE, CLASS_NAME);
+    cpClass = class_create(CLASS_NAME);  // fixed for Linux 6.8+
     if (IS_ERR(cpClass)) {
         unregister_chrdev(majorNumber, DEVICE_NAME);
         return PTR_ERR(cpClass);
     }
 
-    cpDevice = device_create(cpClass, NULL, MKDEV(majorNumber, 0), NULL, DEVICE_NAME);
-    if (IS_ERR(cpDevice)) {
+    cpDevice0 = device_create(cpClass, NULL, MKDEV(majorNumber, 0), NULL, DEVICE_NAME);
+    cpDevice1 = device_create(cpClass, NULL, MKDEV(majorNumber, 1), NULL, DEVICE_NAME "1");
+
+    if (IS_ERR(cpDevice0) || IS_ERR(cpDevice1)) {
+        device_destroy(cpClass, MKDEV(majorNumber, 0));
+        device_destroy(cpClass, MKDEV(majorNumber, 1));
         class_destroy(cpClass);
         unregister_chrdev(majorNumber, DEVICE_NAME);
-        return PTR_ERR(cpDevice);
+        return -1;
     }
 
-    printk(KERN_INFO "cpsysinfo loaded: Major %d\n", majorNumber);
-    printk(KERN_INFO "Use:\n  sudo mknod /dev/cpsysinfo c %d 0  # for processes\n", majorNumber);
-    printk(KERN_INFO "  sudo mknod /dev/cpsysinfo1 c %d 1  # for memory info\n", majorNumber);
+    printk(KERN_INFO "cpsysinfo loaded. Major number: %d\n", majorNumber);
+    printk(KERN_INFO "Use: mknod /dev/cpsysinfo c %d 0  # for process info\n", majorNumber);
+    printk(KERN_INFO "     mknod /dev/cpsysinfo1 c %d 1  # for memory info\n", majorNumber);
     return 0;
 }
 
 static void __exit cpsysinfo_exit(void) {
-    if (info_buffer) kfree(info_buffer);
+    if (info_buffer)
+        kfree(info_buffer);
     device_destroy(cpClass, MKDEV(majorNumber, 0));
     device_destroy(cpClass, MKDEV(majorNumber, 1));
     class_unregister(cpClass);
