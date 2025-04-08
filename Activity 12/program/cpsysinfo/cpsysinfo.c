@@ -116,7 +116,7 @@ static int __init cpsysinfo_init(void) {
 
     printk(KERN_INFO "cpsysinfo loaded. Major number: %d\n", majorNumber);
     printk(KERN_INFO "Use: mknod /dev/cpsysinfo c %d 0  # for process info\n", majorNumber);
-    printk(KERN_INFO "     mknod /dev/cpsysinfo1 c %d 1  # for memory info\n", majorNumber);
+    printk(KERN_INFO "     mknod /dev/cp-meminfo c %d 1  # for memory info\n", majorNumber);
     return 0;
 }
 
