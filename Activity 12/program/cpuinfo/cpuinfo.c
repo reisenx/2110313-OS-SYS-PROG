@@ -18,18 +18,6 @@ static int dev_open = 0;
 static char cpuinfo_buffer[256];  // buffer to store output
 static char *f_ptr;
 
-static inline void native_cpuid(unsigned int *eax, unsigned int *ebx,
-                                unsigned int *ecx, unsigned int *edx)
-{
-    asm volatile("cpuid"
-                  : "=a" (*eax),
-                    "=b" (*ebx),
-                    "=c" (*ecx),
-                    "=d" (*edx)
-                  : "0" (*eax), "2" (*ecx)
-                  : "memory");
-}
-
 static int device_open(struct inode *inode, struct file *file)
 {
     if (dev_open) return -EBUSY;
